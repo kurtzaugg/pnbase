@@ -1,0 +1,24 @@
+mod.web_layout.BackendLayouts {
+
+    # default page
+    default {
+		title = Default
+        #icon = EXT:pnbase/Resources/Public/Icons/default.gif
+		config {
+			backend_layout {
+				colCount = 1
+				rowCount = 1
+				rows {
+					1 {
+						columns {
+							1 {
+								name = Inhalt
+								colPos = 0
+							}
+						}
+					}
+				}
+			}
+		}
+	} 
+}
