@@ -1,0 +1,148 @@
+/* https://www.promptnet.ch */
+
+/********************************
+
+	Farben:
+	
+
+*********************************/
+
+html {
+	font-size: 16px;
+}
+body {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+	font-size: 1rem;
+	line-height: 1.5;
+	color: #323232;
+	margin: 0;
+	padding: 0;
+	background-color: white;
+}
+a, a:hover {
+	color: #e6050a;
+	text-decoration: none;
+}
+a:hover {
+	color: #323232;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+h1, h2, h3, h4, h5, h6 {
+}
+h1 {
+}
+h2 {
+}
+.frame-layout-1 h2 {
+}
+h3 {
+}
+h4 {
+}
+h5 {
+}
+.visible-mobile {
+	display: none;
+}
+.relative {
+	position: relative;
+}
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.ce-gallery .ce-row {
+    margin-bottom: 0;
+    display: flex;
+}
+.ce-textpic .ce-outer {
+    position: relative;
+    float: none;
+    right: unset;
+}
+.ce-gallery .ce-column {
+	margin-right: 0;
+}
+.textmedia .ce-outer {
+	height: 0;
+	padding-bottom: 56.25%;
+	/* padding-bottom: calc(56.25% + 50px); */
+}
+.ce-textpic .ce-inner {
+    float: none;
+    right: unset;
+}
+.textmedia .ce-inner {
+    position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.textmedia .ce-gallery figure {
+	display: block;
+}
+.textmedia .ce-row,
+.textmedia .ce-column,
+.textmedia .video,
+.textmedia .video-embed,
+.textmedia iframe,
+.textmedia .video-embed-item {
+	height: 100%;
+	width: 100%;
+}
+.ce-bodytext ul {
+    padding: 0;
+}
+.ce-bodytext li {
+    list-style: none;
+    padding-left: 20px;
+    position: relative;
+}
+.ce-bodytext li::before {
+    content: "-";
+    position: absolute;
+    left: 2px;
+    top: -1px;
+}
+
+.main-navi-label {
+	position: fixed;
+	cursor: pointer;
+	right: 20px;
+	top: 20px;
+	z-index: 112;
+	width: 64px;
+	overflow: hidden;
+}
+.main-navi-checkbox:checked ~ .main-navi-label  {
+}
+.main-navi-checkbox {
+	display: none;
+}
+.main-nav {
+	position: fixed;
+	top: 0;
+	left: 100%;
+	width: 50%;
+	height: 100vh;
+	overflow: hidden;
+	z-index: 110;
+	transition: all 0.5s ease;
+	background-color: #e6050a;
+	text-align: center;
+	overflow: auto;
+	display: flex;
+	align-items: center;
+}
+.main-navi-checkbox:checked ~ .main-nav {
+	left: 50%;
+	transition: all 0.5s ease;
+}
+.main-nav a {
+}
+.main-nav a:hover,
+.main-nav .current a {
+}
