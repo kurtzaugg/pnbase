@@ -1,0 +1,146 @@
+--- 
+editor: 
+  config: 
+    contentsCss: 
+      - "EXT:rte_ckeditor/Resources/Public/Css/contents.css"
+      - "EXT:pnbase/Resources/Public/Css/rte.css"
+    extraPlugins: 
+      - justify
+      - specialchar
+      - showblocks
+    format_tags: p;h2;h3
+    justifyClasses: 
+      - text-left
+      - text-center
+    removeButtons: 
+      - Anchor
+      - Underline
+      - Strike
+      - Scayt
+      - JustifyBlock
+      - JustifyRight
+      - HorizontalRule
+      - Outdent
+      - Indent
+      - Blockquote
+    removePlugins: 
+      - image
+      - wsc
+      - scayt
+      - quicktable
+    resize_dir: both
+    resize_enabled: true
+    resize_maxWidth: 850
+    resize_minWidth: 400
+    stylesSet: 
+      - 
+        attributes: 
+          class: text-left
+        element: 
+          - h2
+          - h3
+          - p
+          - td
+          - th
+        name: text-left
+      - 
+        attributes: 
+          class: text-center
+        element: 
+          - h2
+          - h3
+          - p
+          - td
+          - th
+        name: text-center
+      - 
+        attributes: 
+          class: big
+        element: 
+          - p
+          - td
+          - th
+          - div
+        name: Big
+      - 
+        attributes: 
+          class: small
+        element: 
+          - p
+          - td
+          - th
+          - div
+        name: Small
+      - 
+        attributes: 
+          class: "btn btn-primary"
+        element: a
+        name: "Link-Button Std"
+      - 
+        attributes: 
+          class: "link-alternative"
+        element: a
+        name: "Alt. Linkfarbe"
+      - 
+        attributes: 
+          onclick: "history.go(-1); return false;"
+        element: a
+        name: Zurück-Link
+      - 
+        attributes: 
+          class: ul-rte
+        element: ul
+        name: "UL Stil"
+    toolbarGroups: 
+      - 
+        groups: 
+          - styles
+          - format
+        name: styles
+      - 
+        groups: 
+          - basicstyles
+        name: basicstyles
+      - 
+        groups: 
+          - list
+          - indent
+          - blocks
+          - align
+        name: paragraph
+      - 
+        groups: 
+          - links
+        name: links
+      - 
+        groups: 
+          - clipboard
+          - cleanup
+          - undo
+        name: clipboard
+      - 
+        groups: 
+          - spellchecker
+        name: editing
+      - 
+        groups: 
+          - insert
+        name: insert
+      - 
+        groups: 
+          - table
+          - specialchar
+        name: tools
+      - 
+        groups: 
+          - mode
+        name: document
+    uiColor: "#F8F8F8"
+    width: 750px
+imports: 
+  - 
+    resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml"
+  - 
+    resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml"
+  - 
+    resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml"

@@ -1,0 +1,165 @@
+/** -----------------------------------------
+ * Core config setup
+ */
+config {
+    doctype = html5
+
+    disablePrefixComment = 1
+    # option: external
+    removeDefaultJS = 1
+    inlineStyle2TempFile = 1
+
+    spamProtectEmailAddresses = ascii
+
+    admPanel = 0
+}
+
+
+/** -----------------------------------------
+ * Core page setup
+ */
+page = PAGE
+page {
+    typeNum = 0
+
+    10 = FLUIDTEMPLATE
+    10 {
+        templateRootPaths.10 = EXT:pnbase/Resources/Private/Templates/Page
+        layoutRootPaths.10 = EXT:pnbase/Resources/Private/Layouts
+        partialRootPaths.10 = EXT:pnbase/Resources/Private/Partials
+
+        templateName = TEXT
+		templateName.stdWrap.cObject = CASE
+		templateName.stdWrap.cObject {
+			key.data = pagelayout
+		
+			default = TEXT
+			default.value = Default
+		}
+        variables {
+            content < styles.content.get
+        }
+    }
+
+    meta {
+        X-UA-Compatible = IE=edge,chrome=1
+        X-UA-Compatible.httpEquivalent = 1
+        viewport = width=device-width, initial-scale=1.0
+        description = TEXT
+        description.data = field:description // field:abstract // levelfield :-1, description, slide // levelfield :-1, abstract, slide
+    }
+
+    includeCSS {
+		bootstrap = https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css
+		colorbox  = EXT:pnbase/Resources/Public/Css/colorbox/colorbox.css
+		custom    = EXT:pnbase/Resources/Public/Css/custom.css
+	}
+
+    includeJSLibs {
+		jquery = https://code.jquery.com/jquery-3.3.1.min.js
+	}
+    includeJSFooterlibs {
+		popper    = https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js
+		bootstrap = https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js
+		colorbox  = EXT:pnbase/Resources/Public/Js/jquery.colorbox-min.js
+		custom    = EXT:pnbase/Resources/Public/Js/custom.js
+	}
+
+}
+
+lib.contentElement {
+   templateRootPaths {
+      200 = EXT:pnbase/Resources/Private/Templates/Content/
+   }
+   partialRootPaths {
+      200 = EXT:pnbase/Resources/Private/Partials/Content/
+   }
+   layoutRootPaths {
+      200 = EXT:pnbase/Resources/Private/Layouts/Content/
+   }
+}
+
+
+/** -----------------------------------------
+ * RTE parsing settings
+ */
+lib.parseFunc_RTE {
+    nonTypoTagStdWrap.encapsLines {
+        # remove class 'bodytext' from p-tags
+        addAttributes.P.class >
+        encapsTagList := addToList(ul,ol)
+    }
+
+    # still required/ok?
+    externalBlocks {
+        table {
+            # Allow more classes than only 'contenttable'
+            stdWrap.HTMLparser.tags.table.fixAttrib.class.list >
+            # Default table tag class
+            stdWrap.HTMLparser.tags.table.fixAttrib.class.default = table
+        }
+    }
+}
+
+page.config {
+    headerComment (
+
+Dieses Dokument wurde von der PromptNet GmbH erstellt
+© PromptNet GmbH, websolutions
+Oldenhornweg 1
+CH-3661 Uetendorf
+Fon: 034 511 25 25
+E-Mail: info@promptnet.ch
+http://www.promptnet.ch
+
+— — — — — — — — — — — — — — — — —
+
+    )
+}
+
+# navbar
+lib.mainnav = COA
+lib.mainnav {
+
+    # navigation
+    20 = HMENU
+    20.wrap = <ul>|</ul>
+    20 {
+        entryLevel = 0
+        1 = TMENU
+        1 {
+            expAll = 1
+
+            NO = 1
+            NO.allWrap >
+            NO.wrapItemAndSub = <li>|</li>
+            ACT = 1
+            ACT < .NO
+            ACT.wrapItemAndSub = <li class="active">|</li>
+            CUR = 1
+            CUR < .NO
+            CUR.wrapItemAndSub = <li class="active current">|</li>
+
+            # für mobile
+            IFSUB = 1
+            IFSUB < .NO
+            IFSUB.wrapItemAndSub = <li class="has-submenu"><span class="arrow"></span>|</li>
+            IFSUB.ATagBeforeWrap = 1
+            IFSUB.stdWrap.wrap = |
+
+            CURIFSUB = 1
+            CURIFSUB < .IFSUB
+            CURIFSUB.wrapItemAndSub = <li class="has-submenu active current"><span class="arrow active"></span>|</li>
+
+            ACTIFSUB = 1
+            ACTIFSUB < .IFSUB
+            ACTIFSUB.wrapItemAndSub = <li class="has-submenu active"><span class="arrow active"></span>|</li>
+        }
+
+        2 < .1
+        2.wrap = <ul>|</ul>
+        3 < .2
+        4 < .3
+        5 < .4
+    }
+}
