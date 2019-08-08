@@ -2,23 +2,7 @@
     "name": "promptnet/pnbase",
     "type": "typo3-cms-extension",
     "description": "Base Package from PromptNet",
-    "homepage": "https://www.promptnet.ch/",
-    "keywords": [
-        "TYPO3",
-        "CMS",
-        "extension"
-    ],
-    "authors": [
-        {
-            "name": "Kurt Zaugg",
-            "email": "k.zaugg@promptnet.ch",
-            "role": "Developer",
-            "homepage": "https://www.promptnet.ch/"
-        }
-    ],
-    "license": [
-        "GPL-2.0-or-later"
-    ],
+    "authors": [],
     "require": {
         "typo3/cms-core": "^9.5"
     },
@@ -27,11 +11,15 @@
             "Promptnet\\Pnbase\\": "Classes/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Promptnet\\Pnbase\\Tests\\": "Tests"
+        }
+    },
     "replace": {
         "pnbase": "self.version",
-        "typo3-ter/pnbase": "self.version"
     },
-    "extra": {
+	"extra": {
         "typo3/cms": {
             "extension-key": "pnbase"
         }
