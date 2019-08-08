@@ -11,15 +11,10 @@
             "Promptnet\\Pnbase\\": "Classes/"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Promptnet\\Pnbase\\Tests\\": "Tests"
-        }
-    },
     "replace": {
-        "pnbase": "self.version",
+        "pnbase": "self.version"
     },
-	"extra": {
+    "extra": {
         "typo3/cms": {
             "extension-key": "pnbase"
         }
